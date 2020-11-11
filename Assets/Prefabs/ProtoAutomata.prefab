@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 1785203313404704624}
   - component: {fileID: 4549383005554508730}
   - component: {fileID: 5170482509353497951}
-  - component: {fileID: 6176828880284716182}
   - component: {fileID: -9084978855115943501}
-  - component: {fileID: -2862011771263256355}
+  - component: {fileID: 2693205135549861634}
   m_Layer: 0
   m_Name: ProtoAutomata
   m_TagString: Automata
@@ -67,7 +66,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e4734298c233d754eaa884a27be3e4de, type: 2}
-  - {fileID: -1580535799172915004, guid: cbeb412867b6ab14daf33ebf86a52b7a, type: 3}
+  - {fileID: 2100000, guid: bcfbcde877bbc144dbdcc32ca34a4892, type: 2}
   - {fileID: 2100000, guid: bcfbcde877bbc144dbdcc32ca34a4892, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -103,21 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBox: 0
---- !u!114 &6176828880284716182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2603744472209105519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8934e9ac742cb324cade7acd1dfa647f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  belt: {fileID: 0}
-  endpoint: {fileID: 7225063742007063283}
-  speed: 2
+  dragging: 0
 --- !u!65 &-9084978855115943501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -131,22 +116,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.020000005, z: 0.02}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!208 &-2862011771263256355
-NavMeshObstacle:
+--- !u!114 &2693205135549861634
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2603744472209105519}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.010000001, y: 0.010000001, z: 0.015000001}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0.0050000004}
-  m_TimeToStationary: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3561c8fcf4ec77544882637089c4adef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  endpoint: {fileID: 7225063742007063283}
+  ct: 0
 --- !u!1 &2651502548346996671
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Conveyor
   - Automata
+  - Box
   layers:
   - Default
   - TransparentFX

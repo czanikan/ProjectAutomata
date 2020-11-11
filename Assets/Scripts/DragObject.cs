@@ -10,7 +10,7 @@ public class DragObject : MonoBehaviour
     private Color originalColor = Color.white;
     private Color warningColor = Color.red;
     private Vector3 originalPos;
-    private bool dragging = false;
+    public bool dragging = false;
     private bool isColliding = false;
     private float distance;
 
