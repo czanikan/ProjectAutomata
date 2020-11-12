@@ -43,4 +43,9 @@ public class EndStateMachine : MonoBehaviour
             other.transform.position = Vector3.MoveTowards(other.transform.position, returnpoint.position, speed * Time.deltaTime);
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        returning = false;
+    }
 }
