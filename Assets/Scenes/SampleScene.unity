@@ -7842,7 +7842,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0c5446d4aa5637b4bb9cefddf5e43497, type: 2}
     - target: {fileID: 919132149155446097, guid: 9df179447ec29094bac59151dd91cc08, type: 3}
       propertyPath: m_Name
-      value: cardbox
+      value: THEBOX
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9df179447ec29094bac59151dd91cc08, type: 3}
       propertyPath: m_IsActive
