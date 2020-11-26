@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class EndStateMachine : MonoBehaviour
 {
-    public Transform returnpoint;
-    public Transform checkpoint;
+    public Transform returnPoint;
+    public Transform checkPoint;
+    public Transform toCheckPoint;
+    public Transform toReturnPoint;
     public float speed = 2;
     private string boxString;
     private bool returning = false;
+    public GameManager gm;
     
     void Start()
     {
@@ -25,12 +29,21 @@ public class EndStateMachine : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(!returning && Vector3.Distance(other.transform.position, checkpoint.transform.position) > 0.01f)
+        if(!returning && Vector3.Distance(other.transform.position, checkPoint.transform.position) > 0.01f)
         {
-            other.transform.position = Vector3.MoveTowards(other.transform.position, checkpoint.position, speed * Time.deltaTime);
-            if (boxString == "rbrbrb")
+            if (Vector3.Distance(other.transform.position, toCheckPoint.transform.position) > 0.01f)
+            {
+                other.transform.position = Vector3.MoveTowards(other.transform.position, toCheckPoint.position, speed * Time.deltaTime);
+            }
+            else
+            {
+                other.transform.position = Vector3.MoveTowards(other.transform.position, checkPoint.position, speed * Time.deltaTime);
+            }
+
+            if (Regex.IsMatch(boxString, "rbrbrb", RegexOptions.IgnoreCase) && gm.GetComponent<GameManager>().isComplete == false)
             {
                 Debug.Log("Complete! :3");
+                gm.GetComponent<GameManager>().isComplete = true;
             }
             else
             {
@@ -40,7 +53,15 @@ public class EndStateMachine : MonoBehaviour
         }
         if(returning)
         {
-            other.transform.position = Vector3.MoveTowards(other.transform.position, returnpoint.position, speed * Time.deltaTime);
+            if(Vector3.Distance(other.transform.position, toReturnPoint.transform.position) > 1f)
+            {
+                other.transform.position = Vector3.MoveTowards(other.transform.position, toReturnPoint.position, speed * Time.deltaTime);
+            }
+            else
+            {
+                other.transform.position = Vector3.MoveTowards(other.transform.position, returnPoint.position, speed * Time.deltaTime);
+            }
+            
         }
     }
 
