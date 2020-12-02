@@ -6,7 +6,7 @@ public class ToolBoxManager : MonoBehaviour
 {
     public GameObject conveyorPrefab;
     public GameObject automataPrefab;
-    public GameObject batteryPrefab;
+    public GameObject FConveyorPrefab;
 
     void Start()
     {
@@ -29,8 +29,8 @@ public class ToolBoxManager : MonoBehaviour
         Instantiate(automataPrefab, transform.position, Quaternion.Euler(-90f, 0f, 0f));
     }
 
-    public void AddBattery()
+    public void AddFlippingConveyor()
     {
-        Instantiate(batteryPrefab, transform.position, Quaternion.Euler(-90f, 0f, 0f));
+        Instantiate(FConveyorPrefab, transform.position, Quaternion.Euler(-90f, 0f, 0f));
     }
 }
