@@ -13,6 +13,7 @@ public class EndStateMachine : MonoBehaviour
     private string boxString;
     private bool returning = false;
     public GameManager gm;
+    public string task;
     
     void Start()
     {
@@ -40,7 +41,7 @@ public class EndStateMachine : MonoBehaviour
                 other.transform.position = Vector3.MoveTowards(other.transform.position, checkPoint.position, speed * Time.deltaTime);
             }
 
-            if (Regex.IsMatch(boxString, "rbrbrb", RegexOptions.IgnoreCase) && gm.GetComponent<GameManager>().isComplete == false)
+            if (Regex.IsMatch(boxString, task, RegexOptions.IgnoreCase) && gm.GetComponent<GameManager>().isComplete == false)
             {
                 Debug.Log("Complete! :3");
                 gm.GetComponent<GameManager>().isComplete = true;
