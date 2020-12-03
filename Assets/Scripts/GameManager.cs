@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         victoryLabel.SetActive(true);
         cc.IncrementScore();
+        cc.SendScoreDataToServer();
     }
     
     
