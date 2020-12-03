@@ -14,4 +14,5 @@ public class BoxData : MonoBehaviour
     {
         stamps += stamp;
     }
+
 }

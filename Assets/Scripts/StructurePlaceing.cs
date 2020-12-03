@@ -36,7 +36,7 @@ public class StructurePlaceing : MonoBehaviour
 
         if (!multiPlaceable)
         {
-            if (Input.GetMouseButtonDown(0) && !isColliding)
+            if (Input.GetMouseButtonDown(0) && !isColliding && TimeManager.isBuildMode == true)
             {
                 var currentPos = transform.position;
                 Instantiate(prefab, new Vector3(Mathf.Round(currentPos.x), 1f, Mathf.Round(currentPos.z)), transform.rotation);
@@ -44,7 +44,7 @@ public class StructurePlaceing : MonoBehaviour
             }
         } else
         {
-            if (Input.GetMouseButton(0) && !isColliding)
+            if (Input.GetMouseButton(0) && !isColliding && TimeManager.isBuildMode == true)
             {
                 var currentPos = transform.position;
                 Instantiate(prefab, new Vector3(Mathf.Round(currentPos.x)+1, 1f, Mathf.Round(currentPos.z)+1), transform.rotation);

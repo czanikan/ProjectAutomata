@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public bool isComplete;
 
+    public CustomConfiguration cc;
+
     public GameObject victoryLabel;
 
     void Start()
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     void Victory()
     {
         victoryLabel.SetActive(true);
+        cc.IncrementScore();
     }
     
     

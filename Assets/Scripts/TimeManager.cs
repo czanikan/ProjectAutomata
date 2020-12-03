@@ -7,10 +7,15 @@ public class TimeManager : MonoBehaviour
 {
 
     public GameObject PauseButton, StartButton, SpeedUpButton;
+    public GameObject BuildMode, RunMode;
+
+    public static bool isBuildMode;
 
     void Start()
     {
         Time.timeScale = 1;
+
+        isBuildMode = true;
     }
 
     void Update()
@@ -55,5 +60,22 @@ public class TimeManager : MonoBehaviour
         PauseButton.GetComponent<Image>().color = Color.white;
         StartButton.GetComponent<Image>().color = Color.white;
         SpeedUpButton.GetComponent<Image>().color = Color.green;
+    }
+
+    public void SwapMode()
+    {
+        if (BuildMode.activeInHierarchy)
+        {
+            BuildMode.SetActive(false);
+            RunMode.SetActive(true);
+
+            isBuildMode = false;
+        } else
+        {
+            BuildMode.SetActive(true);
+            RunMode.SetActive(false);
+
+            isBuildMode = true;
+        }
     }
 }
